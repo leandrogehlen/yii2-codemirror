@@ -7,38 +7,56 @@
  
 namespace kochiro\CodeMirror;
 
+use Yii;
 use yii\helpers\Html;
+use yii\web\View;
 
 /**
  * Implements a CodeMirror editor box
  */
-class CodeMirror extends \yii\widgets\InputWidget
+class CodeMirror extends \kartik\base\InputWidget
 {
     public $script;
     
-    public $baseurl;
-    public $target = null;
+    public $name;
+    public $value;
+    public $mode;
+    public $htmlOptions;
 
-    public function run()
+    public function init()
     {
-		// Add textarea to the page  
-		if( $this->target === null )
-		{
-			list($name, $id) = $this->resolveNameID();
+        parent::init();
 
-			echo Html::textArea( $name, $this->value, $this->htmlOptions );
-		}
-		
-		//set the Mode type
-		if ($this->model->type == 'Database Structure')
-		{
-			$mode = 'text/x-mysql';
-		}
-		else
-		{
-			$mode = 'application/x-httpd-php';
-		}
+        $this->renderInput();
+        $this->registerAssets();
+    }
+    
+    /**
+     * Renders the input
+     */
+    public function renderInput()
+    {
+        // Add textarea to the page  
+		echo Html::textArea( $this->name, $this->value, $this->htmlOptions );
+
+        $script = "<script>
+            var editor = CodeMirror.fromTextArea(document.getElementById('description_".$this->id."'), {
+                lineNumbers: true,
+                styleActiveLine: true,
+                matchBrackets: true
+            });
+            editor.setOption('theme', '".$this->htmlOptions['theme']."');
+        </script>";
         
+        echo $script;
     }
 
+    /**
+     * Registers assets
+     */
+    protected function registerAssets()
+    {
+        $view = $this->getView();
+        CodeMirrorAsset::register($view);
+    }
 }

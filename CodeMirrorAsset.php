@@ -7,6 +7,7 @@
  */
 
 namespace kochiro\codemirror;
+use Yii;
 
 /**
  * CodeMirror bundle for \kochiro\CodeMirror
@@ -20,43 +21,40 @@ class CodeMirrorAsset extends \kartik\base\AssetBundle
     {
         $this->setSourcePath(__DIR__ . '/assets');
         
-        $this->setupAssets('js', ['/lib/codemirror.js']);
+        $this->setupAssets('js', [
+            'lib/codemirror',
+            'addon/dialog/dialog',
+            'addon/display/placeholder',
+            'addon/edit/closebrackets',
+            'addon/edit/closetag',
+            'addon/edit/matchbrackets',
+            'addon/edit/matchtags',
+            'addon/edit/trailingspace',
+            'addon/fold/xml-fold',
+            'addon/hint/html-hint',
+            'addon/hint/show-hint',
+            'addon/hint/xml-hint',
+            'addon/search/match-highlighter',
+            'addon/search/search',
+            'addon/search/searchcursor',
+            'addon/selection/active-line',
+            'keymap/extra',
+            'mode/clike/clike',
+            'mode/css/css',
+            'mode/htmlmixed/htmlmixed',
+            'mode/javascript/javascript',
+            'mode/php/php',
+            'mode/sql/sql',
+            'mode/xml/xml'
+        ]);
         
-        $this->setupAssets('js', ['/addon/fold/xml-fold.js']);
-        $this->setupAssets('js', ['/addon/selection/active-line.js']);
-        $this->setupAssets('js', ['/addon/edit/closebrackets.js']);
-        $this->setupAssets('js', ['/addon/edit/closetag.js']);
-        $this->setupAssets('js', ['/addon/edit/trailingspace.js']);
-        $this->setupAssets('js', ['/addon/display/placeholder.js']);
-        
-        $this->setupAssets('js', ['/addon/edit/matchtags.js']);
-        $this->setupAssets('js', ['/addon/edit/matchbrackets.js']);
-        $this->setupAssets('js', ['/addon/search/searchcursor.js']);
-        $this->setupAssets('js', ['/addon/search/match-highlighter.js']);
-        $this->setupAssets('js', ['/addon/hint/show-hint.js']);
-        $this->setupAssets('js', ['/addon/hint/xml-hint.js']);
-        $this->setupAssets('js', ['/addon/hint/html-hint.js']);
-        $this->setupAssets('js', ['/addon/dialog/dialog.js']);
-        $this->setupAssets('js', ['/addon/search/searchcursor.js']);
-        $this->setupAssets('js', ['/addon/search/search.js']);
-        
-        $this->setupAssets('js', ['/mode/php/php.js']);
-        $this->setupAssets('js', ['/mode/sql/sql.js']);
-        $this->setupAssets('js', ['/mode/xml/xml.js']);
-        $this->setupAssets('js', ['/mode/javascript/javascript.js']);
-        $this->setupAssets('js', ['/mode/css/css.js']);
-        $this->setupAssets('js', ['/mode/htmlmixed/htmlmixed.js']);
-        $this->setupAssets('js', ['/mode/clike/clike.js']);
-        
-        $this->setupAssets('js', ['/keymap/extra.js']);
-        
-        $this->setupAssets('css', ['/lib/codemirror.css']);
-        $this->setupAssets('css', ['/doc/docs.css']);
-        $this->setupAssets('css', ['/addon/hint/show-hint.css']);
-        $this->setupAssets('css', ['/addon/dialog/dialog.css']);
-        $this->setupAssets('css', ['/theme/solarized.css']);
-        
-        $this->setupAssets('js', ['startup.js']);
+        $this->setupAssets('css', [
+            'lib/codemirror',
+            'addon/dialog/dialog',
+            'addon/hint/show-hint',
+            //'doc/docs',
+            'theme/solarized' // see the theme directory for other options and set the desired option in the extension call
+        ]);
         
         parent::init();
     }
