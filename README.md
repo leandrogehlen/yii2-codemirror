@@ -28,4 +28,15 @@ Usage
 Once the extension is installed, simply use it in your code by  :
 
 ```php
-<?= \kochiro\CodeMirror\CodeMirror::widget(); ?>```
+<?php 
+
+use kochiro\CodeMirror\CodeMirror; 
+
+echo $form->field($file, 'description')->widget(CodeMirror::className(), [
+	'name' => '[description][]'.$file->id,
+	'value' => $file->description,
+    'mode' => $mode,
+    'htmlOptions' => ["id"=>'description_'.$file->id, "theme"=>'solarized dark']
+]);
+
+?>```
