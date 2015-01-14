@@ -40,6 +40,7 @@ class CodeMirror extends \kartik\base\InputWidget
         // Add textarea to the page
 		echo Html::textArea( $this->name, $this->value, $this->htmlOptions );
 
+        // This block of script will change the textarea from above into a CodeMirror instance
         $script = "<script>
             var editor = CodeMirror.fromTextArea(document.getElementById('description_".$this->id."'), {
                 lineNumbers: true,

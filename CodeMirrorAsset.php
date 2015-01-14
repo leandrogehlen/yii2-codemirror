@@ -17,7 +17,7 @@ use Yii;
  */
 class CodeMirrorAsset extends \kartik\base\AssetBundle
 {
-    
+    // The JS includes must appear before the textarea so include them in the head
     public $jsOptions = ['position' => \yii\web\View::POS_HEAD];
     
     public function init()
