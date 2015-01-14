@@ -19,7 +19,7 @@
         "psr-4": {
             "kochiro\\CodeMirror\\": ""
         }
-    }
+    },
     "extra": {
         "branch-alias": {
             "dev-master": "1.0.1"
