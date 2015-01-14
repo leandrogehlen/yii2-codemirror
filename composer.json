@@ -3,6 +3,7 @@
     "description": "CodeMirror extension for Yii2",
     "type": "yii2-extension",
     "keywords": ["yii2","extension"],
+	"type": "yii2-extension",
     "license": "LGPL-3.0+",
     "authors": [
         {
@@ -10,12 +11,18 @@
             "email": "jay.leno@aurenav.com"
         }
     ],
+    "minimum-stability": "stable",
     "require": {
         "yiisoft/yii2": "*"
     },
     "autoload": {
         "psr-4": {
             "kochiro\\CodeMirror\\": ""
+        }
+    }
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0.1"
         }
     }
 }
