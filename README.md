@@ -32,11 +32,18 @@ Once the extension is installed, simply use it in your code by  :
 
 use kochiro\CodeMirror\CodeMirror; 
 
+// set the mode based on the available options in assets/mode
+$mode = 'application/x-httpd-php';
+
 echo $form->field($file, 'description')->widget(CodeMirror::className(), [
-	'name' => '[description][]'.$file->id,
-	'value' => $file->description,
+    'id' => $id,
+    'name' => '[description][]'.$id,
+	'value' => $description,
     'mode' => $mode,
-    'htmlOptions' => ["id"=>'description_'.$file->id, "theme"=>'solarized dark']
+    'htmlOptions' => [
+        "id"=>'description_'.$id, 
+        "theme"=>'solarized dark' // set the theme based on the options in assets/theme, you must also include the corresponding css file in CodeMirrorAsset.php
+    ]
 ]);
 
 ?>```

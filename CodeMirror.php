@@ -2,7 +2,7 @@
 /**
  * @copyright Copyright &copy; Jay Leno, Aurenav.com, 2015
  * @package yii2-codemirror
- * @version 1.0.0
+ * @version 1.0.1
  */
  
 namespace kochiro\CodeMirror;
@@ -19,10 +19,7 @@ class CodeMirror extends \kartik\base\InputWidget
     public $script;
     
     public $name;
-<<<<<<< HEAD
     public $id;
-=======
->>>>>>> origin/master
     public $value;
     public $mode;
     public $htmlOptions;
@@ -38,13 +35,9 @@ class CodeMirror extends \kartik\base\InputWidget
     /**
      * Renders the input
      */
-    public function renderInput()
+    protected function renderInput()
     {
-<<<<<<< HEAD
         // Add textarea to the page
-=======
-        // Add textarea to the page  
->>>>>>> origin/master
 		echo Html::textArea( $this->name, $this->value, $this->htmlOptions );
 
         $script = "<script>
@@ -57,15 +50,8 @@ class CodeMirror extends \kartik\base\InputWidget
         </script>";
         
         echo $script;
-<<<<<<< HEAD
-
     }
 
-
-=======
-    }
-
->>>>>>> origin/master
     /**
      * Registers assets
      */
