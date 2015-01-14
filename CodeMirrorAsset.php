@@ -17,6 +17,9 @@ use Yii;
  */
 class CodeMirrorAsset extends \kartik\base\AssetBundle
 {
+    
+    public $jsOptions = ['position' => \yii\web\View::POS_HEAD];
+    
     public function init()
     {
         $this->setSourcePath(__DIR__ . '/assets');
