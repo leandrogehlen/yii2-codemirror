@@ -3,7 +3,7 @@
 /**
  * @copyright Copyright &copy; Jay Leno, Aurenav.com, 2015
  * @package yii2-codemirror
- * @version 1.0.1
+ * @version 1.1.0
  */
 
 namespace kochiro\codemirror;
