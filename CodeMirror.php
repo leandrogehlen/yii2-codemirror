@@ -45,7 +45,8 @@ class CodeMirror extends \kartik\base\InputWidget
             var editor = CodeMirror.fromTextArea(document.getElementById('description_".$this->id."'), {
                 lineNumbers: true,
                 styleActiveLine: true,
-                matchBrackets: true
+                matchBrackets: true,
+                lineWrapping: true
             });
             editor.setOption('theme', '".$this->htmlOptions['theme']."');
         </script>";
