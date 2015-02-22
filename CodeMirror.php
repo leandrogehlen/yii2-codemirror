@@ -51,15 +51,26 @@ class CodeMirror extends InputWidget
      */
     public function run()
     {
-        echo Html::textArea( $this->name, $this->value, $this->options );
+        $hiddenId = ArrayHelper::remove($this->options, 'id');
 
-        $id = $this->options['id'];
-        $var = Inflector::variablize($id) . '_editor';
+        if ($this->hasModel()) {
+            $value = Html::getAttributeValue($this->model, $this->attribute);
+            echo Html::activeHiddenInput($this->model, $this->attribute, ['id' => $hiddenId]);
+        } else {
+            $value = ArrayHelper::getValue($this->options, 'value');
+            echo Html::hiddenInput($this->name, $this->value, ['id' => $hiddenId]);
+        }
+
+        $id = $this->getId() . '-editor';
+        $this->options['id'] = $id;
+        $var = Inflector::variablize($id);
+        echo Html::textarea($this->name, $value, $this->options);
 
         $view = $this->getView();
         CodeMirrorAsset::register($view);
 
         $options = Json::encode($this->pluginOptions);
-        $view->registerJs("var {$var} = CodeMirror.fromTextArea(document.getElementById('$id'), $options)");
+        $view->registerJs("var {$var} = CodeMirror.fromTextArea(document.getElementById('$id'), $options);");
+        $view->registerJs("{$var}.on('change', function(editor){jQuery('#$hiddenId').val(editor.getValue());});");
     }
 }
