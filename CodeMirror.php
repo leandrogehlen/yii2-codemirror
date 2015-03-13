@@ -57,14 +57,14 @@ class CodeMirror extends InputWidget
             $value = Html::getAttributeValue($this->model, $this->attribute);
             echo Html::activeHiddenInput($this->model, $this->attribute, ['id' => $hiddenId]);
         } else {
-            $value = ArrayHelper::getValue($this->options, 'value');
-            echo Html::hiddenInput($this->name, $this->value, ['id' => $hiddenId]);
+            $value = $value = $this->value;
+            echo Html::hiddenInput($this->name, $value, ['id' => $hiddenId]);
         }
 
         $id = $this->getId() . '-editor';
         $this->options['id'] = $id;
         $var = Inflector::variablize($id);
-        echo Html::textarea($this->name, $value, $this->options);
+        echo Html::tag('textarea', Html::encode($value), $this->options);
 
         $view = $this->getView();
         CodeMirrorAsset::register($view);
