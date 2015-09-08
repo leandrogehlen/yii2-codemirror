@@ -1,4 +1,4 @@
-# Yii2 CodeMirror Change log
+# Yii2 CodeMirror Change Log
 
 ## 1.2.0 under development
 

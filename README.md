@@ -12,13 +12,13 @@ The preferred way to install this extension is through [composer](http://getcomp
 Either run
 
 ```
-php composer.phar require --prefer-dist kochiro/yii2-codemirror "*"
+php composer.phar require --prefer-dist leandrogehlen/yii2-codemirror "*"
 ```
 
 or add
 
 ```
-"kochiro/yii2-codemirror": "*"
+"leandrogehlen/yii2-codemirror": "*"
 ```
 
 to the require section of your `composer.json` file.
@@ -33,7 +33,7 @@ Once the extension is installed, simply use it in your code by  :
 
 <?php 
 
-use kochiro\CodeMirror\CodeMirror;
+use leandrogehlen\CodeMirror\CodeMirror;
 
 <?= $form->field($file, 'description')->widget(CodeMirror::className(), [
     'pluginOptions' => [
@@ -70,7 +70,7 @@ I want to use ```php``` mode in the codemirror editor
       ...
   ]
   
-  Yii::$container->set('kochiro\codemirror\CodeMirrorAsset',[
+  Yii::$container->set('leandrogehlen\codemirror\CodeMirrorAsset',[
       'js' => [
           'mode/htmlmixed/htmlmixed.js',
           'mode/xml/xml.js',

@@ -1,7 +1,6 @@
 {
-    "name": "kochiro/yii2-codemirror",
+    "name": "leandrogehlen/yii2-codemirror",
     "description": "CodeMirror extension for Yii2",
-    "type": "yii2-extension",
     "keywords": ["yii2","extension"],
 	"type": "yii2-extension",
     "license": "LGPL-3.0+",
@@ -10,8 +9,8 @@
             "name": "Jay Leno",
             "email": "jay.leno@aurenav.com"
         },{
-          "name": "Leandro Gehlen",
-          "email": "leandrogehlen@gmail.com"
+            "name": "Leandro Gehlen",
+            "email": "leandrogehlen@gmail.com"
         }
     ],
     "minimum-stability": "dev",
@@ -21,7 +20,7 @@
     },
     "autoload": {
         "psr-4": {
-            "kochiro\\CodeMirror\\": ""
+            "leandrogehlen\\codemirror\\": ""
         }
     }
 }
