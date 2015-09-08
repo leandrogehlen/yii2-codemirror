@@ -13,7 +13,7 @@
             "email": "leandrogehlen@gmail.com"
         }
     ],
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "require": {
         "yiisoft/yii2": "*",
         "bower-asset/codemirror": "5.0.*"
