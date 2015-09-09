@@ -2,7 +2,7 @@
     "name": "leandrogehlen/yii2-codemirror",
     "description": "CodeMirror extension for Yii2",
     "keywords": ["yii2","extension"],
-	"type": "yii2-extension",
+    "type": "yii2-extension",
     "license": "LGPL-3.0+",
     "authors": [
         {
@@ -13,7 +13,7 @@
             "email": "leandrogehlen@gmail.com"
         }
     ],
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "require": {
         "yiisoft/yii2": "*",
         "bower-asset/codemirror": "5.0.*"
