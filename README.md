@@ -33,7 +33,7 @@ Once the extension is installed, simply use it in your code by  :
 
 <?php 
 
-use leandrogehlen\CodeMirror\CodeMirror;
+use leandrogehlen\codemirror\CodeMirror;
 
 <?= $form->field($file, 'description')->widget(CodeMirror::className(), [
     'pluginOptions' => [
