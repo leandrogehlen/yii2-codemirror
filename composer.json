@@ -13,14 +13,29 @@
             "email": "leandrogehlen@gmail.com"
         }
     ],
-    "minimum-stability": "dev",
+    "repositories": [{
+        "type": "composer",
+        "url": "https://asset-packagist.org"
+      }],
     "require": {
         "yiisoft/yii2": "*",
-        "bower-asset/codemirror": "5.0.*"
+        "bower-asset/codemirror": "^5.0.38"
     },
     "autoload": {
         "psr-4": {
             "leandrogehlen\\codemirror\\": ""
+        }
+    },
+    "config": {
+        "sort-packages": true,
+        "process-timeout": 1800,
+        "fxp-asset": {
+            "enabled": false
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.2.x-dev"
         }
     }
 }
